@@ -67,7 +67,7 @@ function getVoicingFromManner (manner) {
     case MN_TRILL:
     case MN_TAP:
     case MN_NASAL:
-      return randIntWeighted([24, 1, 0.1])
+      return randIntWeighted([1, 24, 0.1])
   }
 }
 

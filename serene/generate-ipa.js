@@ -1,26 +1,31 @@
 'use strict'
 
+const consonants = ['p', 'b', 'p̪', 'b̪', 't̪', 'd̪', 't', 'd', 't̠', 'd̠', 'ʈ', 'ɖ', 'c', 'ɟ', 'k', 'g', 'q', 'g', '💩', '💩', 'ʡ', 'ʡ̬', 'ʔ', '💩', 'ɸ', 'β', 'f', 'v', 'θ', 'ð', 's', 'z', 'ʃ', 'ʒ', 'ʂ', 'ʐ', 'ç', 'ʝ', 'x', 'ɣ', 'χ', 'ʁ', 'ħ', 'ʕ', 'ʢ̥', 'ʢ', 'h', 'ɦ', 'ɸ̞', 'β̞', 'ʋ̥', 'ʋ', 'θ̞', 'ð̞', 'ɹ̥', 'ɹ', 'ɹ̠̊', 'ɹ̠', 'ɻ̥', 'ɻ', 'j̊', 'j', 'ɰ̊', 'ɰ', 'χ̞', 'ʁ̞', 'ħ̞', 'ʕ̞', 'ʢ̞̊', 'ʢ̞', 'h̞', 'ɦ̞', 'ʙ̥', 'ʙ', 'ʙ̪̊', 'ʙ̪', 'r̪̊', 'r̪', 'r̥', 'r', 'r̠̊', 'r̠', 'ɽ̊ɽ̊', 'ɽɽ', '💩', '💩', '💩', '💩', 'ʀ̥', 'ʀ', '💩', '💩', 'ʜ', 'ʢ', '💩', '💩', 'ⱱ̟̊', 'ⱱ̟', 'ⱱ̥', 'ⱱ', 'ɾ̪̊', 'ɾ̪', 'ɾ̥', 'ɾ', 'ɾ̠̊', 'ɾ̠', 'ɽ̊', 'ɽ', '💩', '💩', '💩', '💩', 'ɢ̥̆', 'ɢ̆', '💩', '💩', 'ʡ̮̊', 'ʡ̮', '💩', '💩', 'm̥', 'm', 'ɱ̊', 'ɱ', 'n̪̊', 'n̪', 'n̥', 'n', 'n̠̊', 'n̠', 'ɳ̊', 'ɳ', 'ɲ̊', 'ɲ', 'ŋ̊', 'ŋ', 'ɴ̥', 'ɴ', '💩', '💩', '💩', '💩', '💩', '💩', '💩', '💩', '💩', '💩', 'l̪̊', 'l̪', 'l̥', 'l', 'l̠̊', 'l̠', 'ɭ̥', 'ɭ', 'ʎ̥', 'ʎ', 'ʟ̥', 'ʟ', 'ʟ̠̊', 'ʟ̠', '💩', '💩', '💩', '💩', '💩', '💩', '💩', '💩', '💩', '💩', 'ɬ̪', 'ɮ̪', 'ɬ', 'ɮ', 'ɬ̠', 'ɮ̠', 'ɭ̥̝', 'ɭ̝', 'ʎ̥̝', 'ʎ̝', 'ʟ̥̝', 'ʟ̝', 'ʟ̠̝̊', 'ʟ̠̝', '💩', '💩', '💩', '💩', '💩', '💩']
+
 function generateIPA (phonology) {
-  let rawConsonant = `<table><tr><th><th>Labial<th>Labiodental<th>Dental<th>Alveolar<th>Postalveolar<th>Retroflex<th>Palatal<th>Velar<th>Uvular<th>Pharyngeal<th>Epiglottal<th>Glottal<tr><th>Stop<td><span>p</span> <span>b</span><td><span>p̪</span> <span>b̪</span><td><span>t̪</span> <span>d̪</span><td><span>t</span> <span>d</span><td><span>t̠</span> <span>d̠</span><td><span>ʈ</span> <span>ɖ</span><td><span>c</span> <span>ɟ</span><td><span>k</span> <span>g</span><td><span>q</span> <span>g</span><td><span>💩</span> <span>💩</span><td><span>ʡ</span> <span>ʡ̬</span><td><span>ʔ</span> <span>💩</span><tr><th>Fricative<td><span>ɸ</span> <span>β</span><td><span>f</span> <span>v</span><td><span>θ</span> <span>ð</span><td><span>s</span> <span>z</span><td><span>ʃ</span> <span>ʒ</span><td><span>ʂ</span> <span>ʐ</span><td><span>ç</span> <span>ʝ</span><td><span>x</span> <span>ɣ</span><td><span>χ</span> <span>ʁ</span><td><span>ħ</span> <span>ʕ</span><td><span>ʢ̥</span> <span>ʢ</span><td><span>h</span> <span>ɦ</span><tr><th>Approximant<td><span>ɸ̞</span> <span>β̞</span><td><span>ʋ̥</span> <span>ʋ</span><td><span>θ̞</span> <span>ð̞</span><td><span>ɹ̥</span> <span>ɹ</span><td><span>ɹ̠̊</span> <span>ɹ̠</span><td><span>ɻ̥</span> <span>ɻ</span><td><span>j̊</span> <span>j</span><td><span>ɰ̊</span> <span>ɰ</span><td><span>χ̞</span> <span>ʁ̞</span><td><span>ħ̞</span> <span>ʕ̞</span><td><span>ʢ̞̊</span> <span>ʢ̞</span><td><span>h̞</span> <span>ɦ̞</span><tr><th>Trill<td><span>ʙ̥</span> <span>ʙ</span><td><span>ʙ̪̊</span> <span>ʙ̪</span><td><span>r̪̊</span> <span>r̪</span><td><span>r̥</span> <span>r</span><td><span>r̠̊</span> <span>r̠</span><td><span>ɽ̊ɽ̊</span> <span>ɽɽ</span><td><span>💩</span> <span>💩</span><td><span>💩</span> <span>💩</span><td><span>ʀ̥</span> <span>ʀ</span><td><span>💩</span> <span>💩</span><td><span>ʜ</span> <span>ʢ</span><td><span>💩</span> <span>💩</span><tr><th>Tap / Flap<td><span>ⱱ̟̊</span> <span>ⱱ̟</span><td><span>ⱱ̥</span> <span>ⱱ</span><td><span>ɾ̪̊</span> <span>ɾ̪</span><td><span>ɾ̥</span> <span>ɾ</span><td><span>ɾ̠̊</span> <span>ɾ̠</span><td><span>ɽ̊</span> <span>ɽ</span><td><span>💩</span> <span>💩</span><td><span>💩</span> <span>💩</span><td><span>ɢ̥̆</span> <span>ɢ̆</span><td><span>💩</span> <span>💩</span><td><span>ʡ̮̊</span> <span>ʡ̮</span><td><span>💩</span> <span>💩</span><tr><th>Nasal<td><span>m̥</span> <span>m</span><td><span>ɱ̊</span> <span>ɱ</span><td><span>n̪̊</span> <span>n̪</span><td><span>n̥</span> <span>n</span><td><span>n̠̊</span> <span>n̠</span><td><span>ɳ̊</span> <span>ɳ</span><td><span>ɲ̊</span> <span>ɲ</span><td><span>ŋ̊</span> <span>ŋ</span><td><span>ɴ̥</span> <span>ɴ</span><td><span>💩</span> <span>💩</span><td><span>💩</span> <span>💩</span><td><span>💩</span> <span>💩</span><tr><th>Lateral Approximant<td><span>💩</span> <span>💩</span><td><span>💩</span> <span>💩</span><td><span>l̪̊</span> <span>l̪</span><td><span>l̥</span> <span>l</span><td><span>l̠̊</span> <span>l̠</span><td><span>ɭ̥</span> <span>ɭ</span><td><span>ʎ̥</span> <span>ʎ</span><td><span>ʟ̥</span> <span>ʟ</span><td><span>ʟ̠̊</span> <span>ʟ̠</span><td><span>💩</span> <span>💩</span><td><span>💩</span> <span>💩</span><td><span>💩</span> <span>💩</span><tr><th>Lateral Fricative<td><span>💩</span> <span>💩</span><td><span>💩</span> <span>💩</span><td><span>ɬ̪</span> <span>ɮ̪</span><td><span>ɬ</span> <span>ɮ</span><td><span>ɬ̠</span> <span>ɮ̠</span><td><span>ɭ̥̝</span> <span>ɭ̝</span><td><span>ʎ̥̝</span> <span>ʎ̝</span><td><span>ʟ̥̝</span> <span>ʟ̝</span><td><span>ʟ̠̝̊</span> <span>ʟ̠̝</span><td><span>💩</span> <span>💩</span><td><span>💩</span> <span>💩</span><td><span>💩</span> <span>💩</span></table>`
   // let rawVowels = `<table><tr><th><th colspan=2>Front<th colspan=2>Near-front<th colspan=2>Central<th colspan=2>Near-back<th colspan=2>Back<tr><th>High<td><span>i</span><td><span>y</span><td><span>💩</span><td><span>💩</span><td><span>ɨ</span><td><span>ʉ</span><td><span>💩</span><td><span>💩</span><td><span>ɯ</span><td><span>u</span><tr><th>Near-High<td><span>💩</span><td><span>💩</span><td><span>ɪ</span><td><span>ʏ</span><td><span>💩</span><td><span>💩</span><td colspan=2><span>ʊ</span><td><span>💩</span><td><span>💩</span><tr><th>Mid-High<td><span>e</span><td><span>ø</span><td><span>💩</span><td><span>💩</span><td><span>ɘ</span><td><span>ɵ</span><td><span>💩</span><td><span>💩</span><td><span>ɤ</span><td><span>o</span><tr><th>Mid<td><span>💩</span><td><span>💩</span><td><span>💩</span><td><span>💩</span><td colspan=2><span>ə</span><td><span>💩</span><td><span>💩</span><td><span>💩</span><td><span>💩</span><tr><th>Mid-Low<td><span>ɛ</span><td><span>œ</span><td><span>💩</span><td><span>💩</span><td><span>ɜ</span><td><span>ɞ</span><td><span>💩</span><td><span>💩</span><td><span>ʌ</span><td><span>ɔ</span><tr><th>Near-Low<td><span>💩</span><td><span>💩</span><td colspan=2><span>æ</span><td colspan=2><span>ɐ</span><td><span>💩</span><td><span>💩</span><td><span>💩</span><td><span>💩</span><tr><th>Low<td><span>💩</span><td><span>💩</span><td><span>💩</span><td><span>💩</span><td><span>a</span><td><span>œ</span><td><span>💩</span><td><span>💩</span><td><span>ɑ</span><td><span>ɒ</span></table>`
-  let range = document.createRange()
-  let skeleton = range.createContextualFragment(rawConsonant)
 
   // blank out all non-phonemes
 
   // consonants
-  let consonantTable = skeleton.firstChild.firstChild
-  for (let manner = 1; manner < consonantTable.children.length; manner++) {
-    let mannerRow = consonantTable.children[manner]
-    for (let place = 1; place < mannerRow.children.length; place++) {
-      let cell = mannerRow.children[place]
-      for (let voicing = 0; voicing < cell.children.length; voicing++) {
-        if (!phonology.exists(new Consonant(place - 1, manner - 1, voicing))) {
-          cell.children[voicing].innerHTML = '&nbsp;'
-        }
+  let html = '<table>' +
+    '<tr><th><th>Labial<th>Labiodental<th>Dental<th>Alveolar<th>Postalveolar<th>Retroflex<th>Palatal<th>Velar<th>Uvular<th>Pharyngeal<th>Epiglottal<th>Glottal<tr>'
+  for (let manner = 0; manner < MANNER_NAMES.length; manner++) {
+    html += '<tr><th>' + MANNER_NAMES[manner] + '</th>';
+    for (let place = 0; place < PLACE_NAMES.length; place++) {
+      html += '<td>'
+      for (let voicing = 0; voicing < 2; voicing++) {
+        html += '<span>';
+        if (phonology.exists(new Consonant(place, manner, voicing)))
+          html += consonants[voicing + 2 * (place + PLACE_NAMES.length * manner)];
+        else
+          html += '&nbsp;'
+        html += '</span>'
       }
+      html += '</td>'
     }
   }
+  document.getElementById("generated-ipa-chart").innerHTML = html
 
   // TODO: vowels
   return skeleton
