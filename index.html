@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Serene</title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <script src="serene/utils.js"></script>
-    <script src="serene/phonology.js"></script>
-    <script src="serene/main.js"></script>
-  </body>
+
+<head>
+  <title>Serene</title>
+  <meta charset="utf-8">
+  <script src="serene/utils.js"></script>
+  <script src="serene/phonology.js"></script>
+  <script>
+    window.onload = function () {
+      let test = new Phonology().toStrings()
+      test.forEach(element => {
+        let entry = document.createElement('p')
+        entry.innerHTML = element
+        document.getElementById('test').appendChild(entry)
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <p id="test"></p>
+</body>
+
 </html>
