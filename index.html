@@ -6,20 +6,18 @@
   <meta charset="utf-8">
   <script src="serene/utils.js"></script>
   <script src="serene/phonology.js"></script>
+  <script src="serene/generate-ipa.js"></script>
   <script>
     window.onload = function () {
-      let test = new Phonology().toStrings()
-      test.forEach(element => {
-        let entry = document.createElement('p')
-        entry.innerHTML = element
-        document.getElementById('test').appendChild(entry)
-      });
+      let test = new Phonology()
+      document.getElementById('generated-ipa-chart').appendChild(generateIPA(test))
     }
   </script>
 </head>
 
 <body>
-  <p id="test"></p>
+  <h1>consonants</h1>
+  <div id="generated-ipa-chart" />
 </body>
 
 </html>

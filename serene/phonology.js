@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const PL_LABIAL = 0
 const PL_LABIODENTAL = 1
@@ -28,8 +28,8 @@ const MN_NASAL = 5
 const MN_LATERAL_APPROXIMANT = 6
 const MN_LATERAL_FRICATIVE = 7
 const MANNER_NAMES = [
-  'stop', 'fricative', 'nasal', 'approximant',
-  'trill', 'tap',
+  'stop', 'fricative', 'approximant',
+  'trill', 'tap', 'nasal',
   'lateral approximant', 'lateral fricative'
 ]
 
@@ -77,11 +77,18 @@ class Consonant {
     this.manner = manner
     this.voicing = voicing
   }
+
   description () {
     return [
       VOICING_NAMES[this.voicing],
       PLACE_NAMES[this.place],
       MANNER_NAMES[this.manner]].join(' ')
+  }
+
+  equals (other) {
+    return this.place === other.place &&
+    this.manner === other.manner &&
+    this.voicing === other.voicing
   }
 }
 
@@ -91,13 +98,26 @@ class Phonology {
   */
   constructor () {
     this.consonants = []
-    var nConsonants = 8 + randInt(12) + randInt(12)
+    let nConsonants = 8 + randInt(12) + randInt(12)
     for (var i = 0; i < nConsonants; ++i) {
-      var place = randInt(PL_GLOTTAL + 1)
-      var manner = getMannerFromPlace(place)
-      var voicing = getVoicingFromManner(manner)
-      this.consonants.push(new Consonant(place, manner, voicing))
+      this.consonants.push(this.newConsonant())
     }
+  }
+
+  newConsonant () {
+    let place = randInt(PL_GLOTTAL + 1)
+    let manner = getMannerFromPlace(place)
+    let voicing = getVoicingFromManner(manner)
+    return new Consonant(place, manner, voicing)
+  }
+
+  exists (consonant) {
+    for (let i = 0; i < this.consonants.length; i++) {
+      if (consonant.equals(this.consonants[i])) {
+        return true
+      }
+    }
+    return false
   }
 
   toStrings () {
