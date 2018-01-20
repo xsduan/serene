@@ -7,7 +7,7 @@ language ideas generator
 - install [node+npm](https://nodejs.org/en/)
 - install [browserify](http://browserify.org/) (`npm install -g browserify`)
 - run something like `browserify main.js -o serene.js --standalone serene`
- - if you want to run it on the browser then `./compile.sh` will automatically do this for you
+  - if you want to run it on the browser then `./compile.sh` will automatically do this for you
 - go to `index.html` and the magic should happen automatically (may take some time though)
 
 or if in the future we have a release you can download the packaged stuff there.
