@@ -4,6 +4,14 @@
 border: 1px dotted green;
 } */
 
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('https://fonts.googleapis.com/css?family=Noto+Sans')
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif
+}
 
 #generated-ipa-chart table {
   border-collapse: collapse
@@ -13,6 +21,16 @@ border: 1px dotted green;
   border: 1px solid black;
 }
 
+td span:first-child + span:last-child {
+    float:right;
+}
+
+#generated-ipa-chart td span {
+  display: inline-block;
+  text-align: center;
+  width: 1em
+}
+
 #generated-ipa-chart * {
-  padding: 0.2em;
+  padding: 0.3em 0.3em
 }
