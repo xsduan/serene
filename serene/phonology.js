@@ -1,121 +1,17 @@
 'use strict'
 
-const PL_LABIAL = 0
-const PL_LABIODENTAL = 1
-const PL_DENTAL = 2
-const PL_ALVEOLAR = 3
-const PL_POSTALVEOLAR = 4
-const PL_RETROFLEX = 5
-const PL_PALATAL = 6
-const PL_VELAR = 7
-const PL_UVULAR = 8
-const PL_PHARYNGEAL = 9
-const PL_EPIGLOTTAL = 10
-const PL_GLOTTAL = 11
-const PLACE_NAMES = [
-  'labial', 'labiodental', 'dental',
-  'alveolar', 'postalveolar', 'retroflex',
-  'palatal', 'velar', 'uvular', 'pharyngeal',
-  'epiglottal', 'glottal'
-]
+const Consonant = require('./consonant.js')
 
-const MN_STOP = 0
-const MN_FRICATIVE = 1
-const MN_APPROXIMANT = 2
-const MN_TRILL = 3
-const MN_TAP = 4
-const MN_NASAL = 5
-const MN_LATERAL_APPROXIMANT = 6
-const MN_LATERAL_FRICATIVE = 7
-const MANNER_NAMES = [
-  'stop', 'fricative', 'approximant',
-  'trill', 'tap', 'nasal',
-  'lateral approximant', 'lateral fricative'
-]
+exports.Phonology = class Phonology {
+  /**
+   *
+   * @param {PrngUtils} generator
+   */
+  constructor (prng) {
+    this.prng = prng
 
-const V_VOICELESS = 0
-const V_VOICED = 1
-const V_ASPIRATED = 2
-const VOICING_NAMES = [
-  'voiceless', 'voiced', 'aspirated'
-]
-
-function getMannerFromPlace (place) {
-  if (place === PL_VELAR) {
-    return randElem([MN_STOP, MN_FRICATIVE, MN_NASAL,
-      MN_APPROXIMANT, MN_LATERAL_APPROXIMANT, MN_LATERAL_FRICATIVE])
-  } else if (place >= PL_DENTAL && place <= PL_UVULAR) {
-    return randInt(MN_LATERAL_FRICATIVE + 1)
-  } else if (place <= PL_LABIODENTAL) {
-    return randInt(MN_NASAL + 1)
-  } else if (place === PL_PHARYNGEAL || place === PL_EPIGLOTTAL) {
-    return randInt(MN_TAP + 1)
-  } else if (place === PL_GLOTTAL) {
-    return randInt(MN_APPROXIMANT + 1)
-  }
-}
-
-function getVoicingFromManner (manner) {
-  switch (manner) {
-    case MN_STOP:
-      return randIntWeighted([6, 3, 1])
-    case MN_FRICATIVE:
-    case MN_LATERAL_FRICATIVE:
-      return randIntWeighted([13, 2, 1])
-    case MN_APPROXIMANT:
-    case MN_LATERAL_APPROXIMANT:
-    case MN_TRILL:
-    case MN_TAP:
-    case MN_NASAL:
-      return randIntWeighted([1, 24, 0.1])
-  }
-}
-
-class Consonant {
-  constructor (place, manner, voicing) {
-    this.place = place
-    this.manner = manner
-    this.voicing = voicing
-  }
-
-  description () {
-    return [
-      VOICING_NAMES[this.voicing],
-      PLACE_NAMES[this.place],
-      MANNER_NAMES[this.manner]].join(' ')
-  }
-
-  toIPA () {
-    const consonants = ['p', 'b', 'p̪', 'b̪', 't̪', 'd̪', 't', 'd', 't̠', 'd̠', 'ʈ', 'ɖ', 'c', 'ɟ', 'k', 'g', 'q', 'g', '', '', 'ʡ', 'ʡ̬', 'ʔ', '',
-      'ɸ', 'β', 'f', 'v', 'θ', 'ð', 's', 'z', 'ʃ', 'ʒ', 'ʂ', 'ʐ', 'ç', 'ʝ', 'x', 'ɣ', 'χ', 'ʁ', 'ħ', 'ʕ', 'ʢ̥', 'ʢ', 'h', 'ɦ',
-      'ɸ̞', 'β̞', 'ʋ̥', 'ʋ', 'θ̞', 'ð̞', 'ɹ̥', 'ɹ', 'ɹ̠̊', 'ɹ̠', 'ɻ̥', 'ɻ', 'j̊', 'j', 'ɰ̊', 'ɰ', 'χ̞', 'ʁ̞', 'ħ̞', 'ʕ̞', 'ʢ̞̊', 'ʢ̞', 'h̞', 'ɦ̞',
-      'ʙ̥', 'ʙ', 'ʙ̪̊', 'ʙ̪', 'r̪̊', 'r̪', 'r̥', 'r', 'r̠̊', 'r̠', 'ɽ̊ɽ̊', 'ɽɽ', '', '', '', '', 'ʀ̥', 'ʀ', '', '', 'ʜ', 'ʢ', '', '',
-      'ⱱ̟̊', 'ⱱ̟', 'ⱱ̥', 'ⱱ', 'ɾ̪̊', 'ɾ̪', 'ɾ̥', 'ɾ', 'ɾ̠̊', 'ɾ̠', 'ɽ̊', 'ɽ', '', '', '', '', 'ɢ̥̆', 'ɢ̆', '', '', 'ʡ̮̊', 'ʡ̮', '', '',
-      'm̥', 'm', 'ɱ̊', 'ɱ', 'n̪̊', 'n̪', 'n̥', 'n', 'n̠̊', 'n̠', 'ɳ̊', 'ɳ', 'ɲ̊', 'ɲ', 'ŋ̊', 'ŋ', 'ɴ̥', 'ɴ', '', '', '', '', '',
-      '', '', '', '', '', 'l̪̊', 'l̪', 'l̥', 'l', 'l̠̊', 'l̠', 'ɭ̥', 'ɭ', 'ʎ̥', 'ʎ', 'ʟ̥', 'ʟ', 'ʟ̠̊', 'ʟ̠', '', '', '', '', '', '',
-      '', '', '', '', 'ɬ̪', 'ɮ̪', 'ɬ', 'ɮ', 'ɬ̠', 'ɮ̠', 'ɭ̥̝', 'ɭ̝', 'ʎ̥̝', 'ʎ̝', 'ʟ̥̝', 'ʟ̝', 'ʟ̠̝̊', 'ʟ̠̝', '', '', '', '', '', '']
-
-    return consonants[this.voicing + 2 * (this.place + PLACE_NAMES.length * this.manner)]
-  }
-
-  isValid () {
-    return this.toIPA() !== ''
-  }
-
-  equals (other) {
-    return this.place === other.place &&
-    this.manner === other.manner &&
-    this.voicing === other.voicing
-  }
-}
-
-class Phonology {
-  /*
-    consonants
-  */
-  constructor () {
     this.consonants = []
-    let nConsonants = 8 + randInt(12) + randInt(12)
+    let nConsonants = 8 + prng.randInt(12) + prng.randInt(12)
     for (var i = 0; i < nConsonants; ++i) {
       this.consonants.push(this.newConsonant())
     }
@@ -123,12 +19,13 @@ class Phonology {
 
   newConsonant () {
     let candidate
+
     do {
-      let place = randInt(PL_GLOTTAL + 1)
-      let manner = getMannerFromPlace(place)
-      let voicing = getVoicingFromManner(manner)
-      candidate = new Consonant(place, manner, voicing)
-    } while (!candidate.isValid())
+      let place = this.prng.randInt(Consonant.PLACES)
+      let manner = Consonant.Consonant.getMannerFromPlace(place, this.prng)
+      let voicing = Consonant.Consonant.getVoicingFromManner(manner, this.prng)
+      candidate = new Consonant.Consonant(place, manner, voicing)
+    } while (!candidate.isValid() || this.exists(candidate))
     return candidate
   }
 
@@ -147,5 +44,32 @@ class Phonology {
       results.push(entry.description())
     })
     return results
+  }
+
+  makeChart () {
+    let chart = []
+
+    // make headers
+    chart.push(Consonant.PLACE_NAMES.slice())
+
+    for (let manner = 0; manner < Consonant.MANNERS; manner++) {
+      let mannerRow = [Consonant.MANNER_NAMES[manner]]
+
+      for (let place = 0; place < Consonant.PLACES; place++) {
+        let placeCell = []
+
+        for (let voicing = 0; voicing < Consonant.VOICINGS; voicing++) {
+          let thisConsonant = new Consonant.Consonant(place, manner, voicing)
+          if (this.exists(thisConsonant)) {
+            placeCell.push(thisConsonant.toIPA())
+          } else {
+            placeCell.push('')
+          }
+        }
+        mannerRow.push(placeCell)
+      }
+      chart.push(mannerRow)
+    }
+    return chart
   }
 }

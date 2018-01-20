@@ -4,13 +4,13 @@
 <head>
   <title>Serene</title>
   <meta charset="utf-8">
-  <script src="serene/utils.js"></script>
-  <script src="serene/phonology.js"></script>
-  <script src="serene/generate-ipa.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <script src="js/generate.js"></script>
+  <!-- if you've compiled serene to somewhere else this is where you would link it -->
+  <script src="js/serene.js"></script>
   <script>
     window.onload = function () {
-      let test = new Phonology()
-      document.getElementById('generated-ipa-chart').appendChild(generateIPA(test))
+      document.getElementById('generated-ipa-chart').appendChild(generate())
     }
   </script>
 </head>

@@ -1,0 +1,22 @@
+{
+  "name": "serene",
+  "version": "0.0.1",
+  "description": "language ideas generator",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xsduan/serene.git"
+  },
+  "author": "",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/xsduan/serene/issues"
+  },
+  "homepage": "https://github.com/xsduan/serene#readme",
+  "dependencies": {
+    "mersenne-twister": "^1.1.0"
+  },
+  "devDependencies": {
+    "uglifyify": "^4.0.5"
+  }
+}

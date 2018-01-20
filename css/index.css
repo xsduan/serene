@@ -1,0 +1,18 @@
+
+/* For debugging purposes */
+/* * {
+border: 1px dotted green;
+} */
+
+
+#generated-ipa-chart table {
+  border-collapse: collapse
+}
+
+#generated-ipa-chart td, #generated-ipa-chart th {
+  border: 1px solid black;
+}
+
+#generated-ipa-chart * {
+  padding: 0.2em;
+}
