@@ -9,7 +9,7 @@ function generate (phonology) {
   html += '<div>Seed: ' + lang[0] + '</div>'
 
   // consonants
-  let phono = lang[0]
+  let phono = lang[1]
   html += '<table><tr><th><th>'
 
   // header
