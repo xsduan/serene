@@ -10,7 +10,17 @@
   <script src="js/serene.js"></script>
   <script>
     window.onload = function () {
-      document.getElementById('generated-ipa-chart').appendChild(generate())
+      // query ?seed=<seed>
+      let seed = void 0 // undefined
+      window.location.search.substr(1).split('&').forEach(function(entry) {
+        let kv = entry.split('=')
+        if (kv[0] === 'seed') {
+          seed = kv[1]
+        }
+      })
+
+      // run
+      document.getElementById('generated-ipa-chart').appendChild(generate(seed))
     }
   </script>
 </head>

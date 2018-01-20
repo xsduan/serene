@@ -1,10 +1,10 @@
 'use strict'
 
-function generate (phonology) {
+function generate (seed) {
   let range = document.createRange()
   let html = ''
 
-  let lang = serene.generate()
+  let lang = serene.generate(seed)
 
   html += '<div>Seed: ' + lang[0] + '</div>'
 

@@ -12,6 +12,11 @@ language ideas generator
 
 or if in the future we have a release you can download the packaged stuff there.
 
+## running
+
+- going to `./index.html` directly will generate a seed for you
+- going to `./index.html?seed=<seed>` will use that seed instead.
+
 # about
 
 ## what we are
