@@ -26,6 +26,11 @@ function generate (phonology) {
     row.forEach(function (cell) {
       html += '<td>'
       cell.forEach(function (entry) {
+        // force blank space
+        if (entry === '') {
+          entry = '&nbsp'
+        }
+
         html += '<span>' + entry + '</span>'
       })
     })
