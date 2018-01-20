@@ -14,6 +14,9 @@ exports.Consonant = class Consonant {
   }
 
   toIPA () {
+    if (this.voicing === exports.V_ASPIRATED) {
+      return exports.consonantIPA[2 * (this.place + exports.PLACE_NAMES.length * this.manner)] + 'ʰ'
+    }
     return exports.consonantIPA[this.voicing + 2 * (this.place + exports.PLACE_NAMES.length * this.manner)]
   }
 
