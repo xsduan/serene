@@ -3,6 +3,15 @@
 const Mersenne = require('mersenne-twister')
 
 exports.PrngUtils = class PrngUtils extends Mersenne {
+  constructor (seed) {
+    if (seed === undefined) {
+      seed = new Date().getTime()
+    }
+    super(seed)
+
+    // save seed for future reference
+    this.seed = seed
+  }
 
   /**
    * Returns random number up to a max value. [0, n)
@@ -80,4 +89,12 @@ exports.PrngUtils = class PrngUtils extends Mersenne {
     return l[this.randInt(l.length)]
   }
 
+  /**
+   * Gets the seed of this instance.
+   *
+   * @return {int} Seed
+   */
+  getSeed () {
+    return this.seed
+  }
 }

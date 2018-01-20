@@ -6,6 +6,7 @@ function generate (phonology) {
 
   let lang = serene.generate()
 
+  html += '<div>Seed: ' + lang[0] + '</div>'
 
   // consonants
   let phono = lang[0]

@@ -7,6 +7,7 @@ exports.generate = function generate (seed = undefined) {
   let results = []
 
   let prng = new Prng.PrngUtils(seed)
+  results.push(prng.getSeed())
 
   let phonology = new Phono.Phonology(prng)
   results.push(phonology.makeChart())
