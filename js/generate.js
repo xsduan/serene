@@ -28,7 +28,7 @@ function generate (phonology) {
       cell.forEach(function (entry) {
         // force blank space
         if (entry === '') {
-          entry = '&nbsp'
+          entry = '&nbsp;'
         }
 
         html += '<span>' + entry + '</span>'

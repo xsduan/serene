@@ -15,7 +15,12 @@ exports.Consonant = class Consonant {
 
   toIPA () {
     if (this.voicing === exports.V_ASPIRATED) {
-      return exports.consonantIPA[2 * (this.place + exports.PLACE_NAMES.length * this.manner)] + 'ʰ'
+      let voiceless = exports.consonantIPA[2 * (this.place + exports.PLACE_NAMES.length * this.manner)]
+      if (voiceless !== '') {
+        return voiceless + 'ʰ'
+      } else {
+        return ''
+      }
     }
     return exports.consonantIPA[this.voicing + 2 * (this.place + exports.PLACE_NAMES.length * this.manner)]
   }
