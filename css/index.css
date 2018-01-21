@@ -4,13 +4,11 @@
 border: 1px dotted green;
 } */
 
-@font-face {
-  font-family: 'Noto Sans';
-  src: url('https://fonts.googleapis.com/css?family=Noto+Sans')
-}
+/* fonts */
+@import url('https://fonts.googleapis.com/css?family=Gentium+Basic');
 
 body {
-  font-family: 'Noto Sans', sans-serif
+  font-family: 'Gentium Basic', serif
 }
 
 #generated-ipa-chart table {
