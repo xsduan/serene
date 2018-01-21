@@ -1,3 +1,5 @@
+'use strict'
+
 exports.Consonant = class Consonant {
   constructor (place, manner, voicing) {
     this.place = place
