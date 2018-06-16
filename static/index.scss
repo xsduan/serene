@@ -6,17 +6,25 @@ body {
 #generated-ipa-chart {
   table {
     border-collapse: collapse;
-    tbody {
-      & tr:nth-child(2n+1) {
+    tbody tr {
+      &:nth-of-type(odd) {
         &,
         & td {
           border-bottom: none;
         }
       }
-      & tr:nth-child(2n) {
+      &:nth-of-type(even) {
         &,
         & td {
           border-top: none;
+        }
+      }
+      & td {
+        &:nth-of-type(odd) {
+          border-right: none;
+        }
+        &:nth-of-type(even) {
+          border-left: none;
         }
       }
     }

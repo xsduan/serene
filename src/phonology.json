@@ -33,7 +33,7 @@
       "main": [
         [
           [
-            { "letter": "p", "aspirated": false },
+            { "letter": "p", "aspirated": true },
             { "letter": "b", "aspirated": true }
           ],
           [

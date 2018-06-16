@@ -19,7 +19,9 @@ export class ConsonantChart extends Component {
           <tr>
             <th />
             {[...Array(placeCount).keys()].map(p => (
-              <th scope="column">{names.places[p]}</th>
+              <th scope="column" colSpan={2}>
+                {names.places[p]}
+              </th>
             ))}
           </tr>
         </thead>
@@ -32,24 +34,21 @@ export class ConsonantChart extends Component {
                     {names.manners[m]}
                   </th>
                 ) : null}
-                {[...Array(placeCount).keys()].map(p => (
-                  <td>
-                    {[false, true].map(
-                      a =>
-                        Consonant.valid(m, p, v, a) ? (
-                          <span>
-                            <Consonant
-                              key={`Consonant:${m}:${p}:${v}:${a}`}
-                              manner={m}
-                              place={p}
-                              voicing={v}
-                              aspirated={a}
-                            />
-                          </span>
-                        ) : null
-                    )}
-                  </td>
-                ))}
+                {[...Array(placeCount).keys()].map(p =>
+                  [false, true].map(a => (
+                    <td>
+                      {Consonant.valid(m, p, v, a) ? (
+                        <Consonant
+                          key={`Consonant:${m}:${p}:${v}:${a}`}
+                          manner={m}
+                          place={p}
+                          voicing={v}
+                          aspirated={a}
+                        />
+                      ) : null}
+                    </td>
+                  ))
+                )}
               </tr>
             ))
           )}
