@@ -1,27 +1,35 @@
-@import url('https://fonts.googleapis.com/css?family=Gentium+Basic');
+@import url("https://fonts.googleapis.com/css?family=Gentium+Basic");
 body {
-  font-family: 'Gentium Basic', serif;
+  font-family: "Gentium Basic", serif;
 }
 
 #generated-ipa-chart {
   table {
     border-collapse: collapse;
-  }
-  td span {
-    display: inline-block;
-    text-align: center;
-    width: 1em
+    tbody {
+      & tr:nth-child(2n+1) {
+        &,
+        & td {
+          border-bottom: none;
+        }
+      }
+      & tr:nth-child(2n) {
+        &,
+        & td {
+          border-top: none;
+        }
+      }
+    }
   }
   td,
   th {
     border: 1px solid black;
   }
-}
-
-td span:first-child+span:last-child {
-  float: right;
+  td:empty {
+    background-color: lightgray;
+  }
 }
 
 #generated-ipa-chart * {
-  padding: 0.3em 0.3em
+  padding: 0.3em 0.3em;
 }

@@ -24,10 +24,10 @@ export default class Consonant extends Component {
 
   render () {
     let { place: p, manner: m, voicing: v, aspirated: a } = this.props
-    return Consonant.valid(m, p, v) ? (
+    return (
       <span title={Consonant.name(m, p, v, a)}>
         {Consonant.ipa(m, p, v, a)}
       </span>
-    ) : null
+    )
   }
 }
