@@ -32,85 +32,265 @@
       "modifiers": { "aspiration": ["ʰ", "ʱ"] },
       "main": [
         [
-          ["p", "b"],
-          ["p̪", "b̪"],
-          ["t̪", "d̪"],
-          ["t", "d"],
-          ["t̠", "d̠"],
-          ["ʈ", "ɖ"],
-          ["c", "ɟ"],
-          ["k", "g"],
-          ["q", "g"],
+          [
+            { "letter": "p", "aspirated": false },
+            { "letter": "b", "aspirated": true }
+          ],
+          [
+            { "letter": "p̪", "aspirated": true },
+            { "letter": "b̪", "aspirated": true }
+          ],
+          [
+            { "letter": "t̪", "aspirated": true },
+            { "letter": "d̪", "aspirated": true }
+          ],
+          [
+            { "letter": "t", "aspirated": true },
+            { "letter": "d", "aspirated": true }
+          ],
+          [
+            { "letter": "t̠", "aspirated": true },
+            { "letter": "d̠", "aspirated": true }
+          ],
+          [
+            { "letter": "ʈ", "aspirated": true },
+            { "letter": "ɖ", "aspirated": true }
+          ],
+          [
+            { "letter": "c", "aspirated": true },
+            { "letter": "ɟ", "aspirated": true }
+          ],
+          [
+            { "letter": "k", "aspirated": true },
+            { "letter": "g", "aspirated": true }
+          ],
+          [
+            { "letter": "q", "aspirated": true },
+            { "letter": "g", "aspirated": true }
+          ],
           [],
-          ["ʡ", "ʡ̬"],
-          ["ʔ"]
+          [
+            { "letter": "ʡ", "aspirated": true },
+            { "letter": "ʡ̬", "aspirated": true }
+          ],
+          [{ "letter": "ʔ", "aspirated": true }]
         ],
         [
-          ["ɸ", "β"],
-          ["f", "v"],
-          ["θ", "ð"],
-          ["s", "z"],
-          ["ʃ", "ʒ"],
-          ["ʂ", "ʐ"],
-          ["ç", "ʝ"],
-          ["x", "ɣ"],
-          ["χ", "ʁ"],
-          ["ħ", "ʕ"],
-          ["ʢ̥", "ʢ"],
-          ["h", "ɦ"]
+          [
+            { "letter": "ɸ", "aspirated": true },
+            { "letter": "β", "aspirated": true }
+          ],
+          [
+            { "letter": "f", "aspirated": true },
+            { "letter": "v", "aspirated": true }
+          ],
+          [
+            { "letter": "θ", "aspirated": true },
+            { "letter": "ð", "aspirated": true }
+          ],
+          [
+            { "letter": "s", "aspirated": true },
+            { "letter": "z", "aspirated": true }
+          ],
+          [
+            { "letter": "ʃ", "aspirated": true },
+            { "letter": "ʒ", "aspirated": true }
+          ],
+          [
+            { "letter": "ʂ", "aspirated": true },
+            { "letter": "ʐ", "aspirated": true }
+          ],
+          [
+            { "letter": "ç", "aspirated": true },
+            { "letter": "ʝ", "aspirated": true }
+          ],
+          [
+            { "letter": "x", "aspirated": true },
+            { "letter": "ɣ", "aspirated": true }
+          ],
+          [
+            { "letter": "χ", "aspirated": true },
+            { "letter": "ʁ", "aspirated": true }
+          ],
+          [
+            { "letter": "ħ", "aspirated": true },
+            { "letter": "ʕ", "aspirated": true }
+          ],
+          [
+            { "letter": "ʢ̥", "aspirated": true },
+            { "letter": "ʢ", "aspirated": true }
+          ],
+          [
+            { "letter": "h", "aspirated": true },
+            { "letter": "ɦ", "aspirated": true }
+          ]
         ],
         [
-          ["ɸ̞", "β̞"],
-          ["ʋ̥", "ʋ"],
-          ["θ̞", "ð̞"],
-          ["ɹ̥", "ɹ"],
-          ["ɹ̠̊", "ɹ̠"],
-          ["ɻ̥", "ɻ"],
-          ["j̊", "j"],
-          ["ɰ̊", "ɰ"],
-          ["χ̞", "ʁ̞"],
-          ["ħ̞", "ʕ̞"],
-          ["ʢ̞̊", "ʢ̞"],
-          ["h̞", "ɦ̞"]
+          [
+            { "letter": "ɸ̞", "aspirated": true },
+            { "letter": "β̞", "aspirated": true }
+          ],
+          [
+            { "letter": "ʋ̥", "aspirated": true },
+            { "letter": "ʋ", "aspirated": true }
+          ],
+          [
+            { "letter": "θ̞", "aspirated": true },
+            { "letter": "ð̞", "aspirated": true }
+          ],
+          [
+            { "letter": "ɹ̥", "aspirated": true },
+            { "letter": "ɹ", "aspirated": true }
+          ],
+          [
+            { "letter": "ɹ̠̊", "aspirated": true },
+            { "letter": "ɹ̠", "aspirated": true }
+          ],
+          [
+            { "letter": "ɻ̥", "aspirated": true },
+            { "letter": "ɻ", "aspirated": true }
+          ],
+          [
+            { "letter": "j̊", "aspirated": true },
+            { "letter": "j", "aspirated": true }
+          ],
+          [
+            { "letter": "ɰ̊", "aspirated": true },
+            { "letter": "ɰ", "aspirated": true }
+          ],
+          [
+            { "letter": "χ̞", "aspirated": true },
+            { "letter": "ʁ̞", "aspirated": true }
+          ],
+          [
+            { "letter": "ħ̞", "aspirated": true },
+            { "letter": "ʕ̞", "aspirated": true }
+          ],
+          [
+            { "letter": "ʢ̞̊", "aspirated": true },
+            { "letter": "ʢ̞", "aspirated": true }
+          ],
+          [
+            { "letter": "h̞", "aspirated": true },
+            { "letter": "ɦ̞", "aspirated": true }
+          ]
         ],
         [
-          ["ʙ̥", "ʙ"],
-          ["ʙ̪̊", "ʙ̪"],
-          ["r̪̊", "r̪"],
-          ["r̥", "r"],
-          ["r̠̊", "r̠"],
-          ["ɽ̊ɽ̊", "ɽɽ"],
+          [
+            { "letter": "ʙ̥", "aspirated": true },
+            { "letter": "ʙ", "aspirated": true }
+          ],
+          [
+            { "letter": "ʙ̪̊", "aspirated": true },
+            { "letter": "ʙ̪", "aspirated": true }
+          ],
+          [
+            { "letter": "r̪̊", "aspirated": true },
+            { "letter": "r̪", "aspirated": true }
+          ],
+          [
+            { "letter": "r̥", "aspirated": true },
+            { "letter": "r", "aspirated": true }
+          ],
+          [
+            { "letter": "r̠̊", "aspirated": true },
+            { "letter": "r̠", "aspirated": true }
+          ],
+          [
+            { "letter": "ɽ̊ɽ̊", "aspirated": true },
+            { "letter": "ɽɽ", "aspirated": true }
+          ],
           [],
           [],
-          ["ʀ̥", "ʀ"],
+          [
+            { "letter": "ʀ̥", "aspirated": true },
+            { "letter": "ʀ", "aspirated": true }
+          ],
           [],
-          ["ʜ", "ʢ"],
+          [
+            { "letter": "ʜ", "aspirated": true },
+            { "letter": "ʢ", "aspirated": true }
+          ],
           []
         ],
         [
-          ["ⱱ̟̊", "ⱱ̟"],
-          ["ⱱ̥", "ⱱ"],
-          ["ɾ̪̊", "ɾ̪"],
-          ["ɾ̥", "ɾ"],
-          ["ɾ̠̊", "ɾ̠"],
-          ["ɽ̊", "ɽ"],
+          [
+            { "letter": "ⱱ̟̊", "aspirated": true },
+            { "letter": "ⱱ̟", "aspirated": true }
+          ],
+          [
+            { "letter": "ⱱ̥", "aspirated": true },
+            { "letter": "ⱱ", "aspirated": true }
+          ],
+          [
+            { "letter": "ɾ̪̊", "aspirated": true },
+            { "letter": "ɾ̪", "aspirated": true }
+          ],
+          [
+            { "letter": "ɾ̥", "aspirated": true },
+            { "letter": "ɾ", "aspirated": true }
+          ],
+          [
+            { "letter": "ɾ̠̊", "aspirated": true },
+            { "letter": "ɾ̠", "aspirated": true }
+          ],
+          [
+            { "letter": "ɽ̊", "aspirated": true },
+            { "letter": "ɽ", "aspirated": true }
+          ],
           [],
           [],
-          ["ɢ̥̆", "ɢ̆"],
+          [
+            { "letter": "ɢ̥̆", "aspirated": true },
+            { "letter": "ɢ̆", "aspirated": true }
+          ],
           [],
-          ["ʡ̮̊", "ʡ̮"],
-          ["", ""]
+          [
+            { "letter": "ʡ̮̊", "aspirated": true },
+            { "letter": "ʡ̮", "aspirated": true }
+          ],
+          [
+            { "letter": "", "aspirated": true },
+            { "letter": "", "aspirated": true }
+          ]
         ],
         [
-          ["m̥", "m"],
-          ["ɱ̊", "ɱ"],
-          ["n̪̊", "n̪"],
-          ["n̥", "n"],
-          ["n̠̊", "n̠"],
-          ["ɳ̊", "ɳ"],
-          ["ɲ̊", "ɲ"],
-          ["ŋ̊", "ŋ"],
-          ["ɴ̥", "ɴ"],
+          [
+            { "letter": "m̥", "aspirated": true },
+            { "letter": "m", "aspirated": true }
+          ],
+          [
+            { "letter": "ɱ̊", "aspirated": true },
+            { "letter": "ɱ", "aspirated": true }
+          ],
+          [
+            { "letter": "n̪̊", "aspirated": true },
+            { "letter": "n̪", "aspirated": true }
+          ],
+          [
+            { "letter": "n̥", "aspirated": true },
+            { "letter": "n", "aspirated": true }
+          ],
+          [
+            { "letter": "n̠̊", "aspirated": true },
+            { "letter": "n̠", "aspirated": true }
+          ],
+          [
+            { "letter": "ɳ̊", "aspirated": true },
+            { "letter": "ɳ", "aspirated": true }
+          ],
+          [
+            { "letter": "ɲ̊", "aspirated": true },
+            { "letter": "ɲ", "aspirated": true }
+          ],
+          [
+            { "letter": "ŋ̊", "aspirated": true },
+            { "letter": "ŋ", "aspirated": true }
+          ],
+          [
+            { "letter": "ɴ̥", "aspirated": true },
+            { "letter": "ɴ", "aspirated": true }
+          ],
           [],
           [],
           []
@@ -118,13 +298,34 @@
         [
           [],
           [],
-          ["l̪̊", "l̪"],
-          ["l̥", "l"],
-          ["l̠̊", "l̠"],
-          ["ɭ̥", "ɭ"],
-          ["ʎ̥", "ʎ"],
-          ["ʟ̥", "ʟ"],
-          ["ʟ̠̊", "ʟ̠"],
+          [
+            { "letter": "l̪̊", "aspirated": true },
+            { "letter": "l̪", "aspirated": true }
+          ],
+          [
+            { "letter": "l̥", "aspirated": true },
+            { "letter": "l", "aspirated": true }
+          ],
+          [
+            { "letter": "l̠̊", "aspirated": true },
+            { "letter": "l̠", "aspirated": true }
+          ],
+          [
+            { "letter": "ɭ̥", "aspirated": true },
+            { "letter": "ɭ", "aspirated": true }
+          ],
+          [
+            { "letter": "ʎ̥", "aspirated": true },
+            { "letter": "ʎ", "aspirated": true }
+          ],
+          [
+            { "letter": "ʟ̥", "aspirated": true },
+            { "letter": "ʟ", "aspirated": true }
+          ],
+          [
+            { "letter": "ʟ̠̊", "aspirated": true },
+            { "letter": "ʟ̠", "aspirated": true }
+          ],
           [],
           [],
           []
@@ -132,13 +333,34 @@
         [
           [],
           [],
-          ["ɬ̪", "ɮ̪"],
-          ["ɬ", "ɮ"],
-          ["ɬ̠", "ɮ̠"],
-          ["ɭ̥̝", "ɭ̝"],
-          ["ʎ̥̝", "ʎ̝"],
-          ["ʟ̥̝", "ʟ̝"],
-          ["ʟ̠̝̊", "ʟ̠̝"],
+          [
+            { "letter": "ɬ̪", "aspirated": true },
+            { "letter": "ɮ̪", "aspirated": true }
+          ],
+          [
+            { "letter": "ɬ", "aspirated": true },
+            { "letter": "ɮ", "aspirated": true }
+          ],
+          [
+            { "letter": "ɬ̠", "aspirated": true },
+            { "letter": "ɮ̠", "aspirated": true }
+          ],
+          [
+            { "letter": "ɭ̥̝", "aspirated": true },
+            { "letter": "ɭ̝", "aspirated": true }
+          ],
+          [
+            { "letter": "ʎ̥̝", "aspirated": true },
+            { "letter": "ʎ̝", "aspirated": true }
+          ],
+          [
+            { "letter": "ʟ̥̝", "aspirated": true },
+            { "letter": "ʟ̝", "aspirated": true }
+          ],
+          [
+            { "letter": "ʟ̠̝̊", "aspirated": true },
+            { "letter": "ʟ̠̝", "aspirated": true }
+          ],
           [],
           [],
           []

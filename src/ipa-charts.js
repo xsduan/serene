@@ -34,10 +34,10 @@ export class ConsonantChart extends Component {
                 ) : null}
                 {[...Array(placeCount).keys()].map(p => (
                   <td>
-                    {Consonant.valid(m, p, v) ? (
-                      <React.Fragment>
-                        <span>
-                          {[false, true].map(a => (
+                    {[false, true].map(
+                      a =>
+                        Consonant.valid(m, p, v, a) ? (
+                          <span>
                             <Consonant
                               key={`Consonant:${m}:${p}:${v}:${a}`}
                               manner={m}
@@ -45,11 +45,9 @@ export class ConsonantChart extends Component {
                               voicing={v}
                               aspirated={a}
                             />
-                          ))}
-                        </span>
-                        <br />
-                      </React.Fragment>
-                    ) : null}
+                          </span>
+                        ) : null
+                    )}
                   </td>
                 ))}
               </tr>

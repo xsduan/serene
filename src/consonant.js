@@ -14,12 +14,13 @@ export default class Consonant extends Component {
   }
 
   static ipa (m, p, v, a = false) {
-    let raw = consonants.ipa.main[m][p][v]
+    let raw = consonants.ipa.main[m][p][v].letter
     return a ? `${raw}${consonants.ipa.modifiers.aspiration[v]}` : raw
   }
 
-  static valid (m, p, v) {
-    return !!consonants.ipa.main[m][p][v]
+  static valid (m, p, v, a = false) {
+    let ipa = consonants.ipa.main[m][p][v]
+    return !!(ipa && ipa.letter && (!a || ipa.aspirated))
   }
 
   render () {
