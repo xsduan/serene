@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { consonants } from './phonology.json'
+import { consonants } from '../consts/phonology.json'
 
 export default class Consonant extends Component {
   static name (p, m, v, a = false) {

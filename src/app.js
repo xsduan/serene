@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { ConsonantChart } from './ipa-charts'
+import { ConsonantChart } from './components/ipa-charts'
 
 export default class App extends Component {
   render () {

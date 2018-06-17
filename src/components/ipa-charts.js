@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Consonant from './consonant'
 
-import { consonants } from './phonology.json'
+import { consonants } from '../consts/phonology.json'
 
 export class ConsonantChart extends Component {
   render () {
