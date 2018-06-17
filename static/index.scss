@@ -41,8 +41,7 @@ body {
   th {
     border: 1px solid black;
   }
-}
-
-#generated-ipa-chart * {
-  padding: 0.3em;
+  & * {
+    padding: 0.3em;
+  }
 }
