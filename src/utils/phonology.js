@@ -1,7 +1,7 @@
 import { consonantNameMappings } from '.'
 import { valid } from './consonant'
 
-import { consonants } from '../consts/phonology.json'
+import { names as consonantNames } from '../consts/consonants.json'
 
 function mapNames (arr, aspect) {
   return arr.map(name => consonantNameMappings()[aspect][name])
@@ -75,7 +75,7 @@ function voicingFromManner (manner, prng) {
  * Generates a (manner, place, voicing, aspirated) tuple from a prng.
  */
 export function generateConsonant (prng) {
-  let place = prng.randInt(consonants.names.places.length)
+  let place = prng.randInt(consonantNames.places.length)
   let manner = mannerFromPlace(place, prng)
   let [voicing, aspirated] = voicingFromManner(manner, prng)
   return [manner, place, voicing, aspirated]

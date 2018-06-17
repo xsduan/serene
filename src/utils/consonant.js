@@ -1,19 +1,23 @@
-import { consonants } from '../consts/phonology.json'
+import {
+  names as consonantNames,
+  ipa as consonantIpa
+} from '../consts/consonants.json'
 
 export function name (m, p, v, a = false) {
-  let names = consonants.names
-  let unaspirated = [names.voicings[v], names.places[p], names.manners[m]].join(
-    ' '
-  )
-  return a ? `${names.aspiration[v]} ${unaspirated}` : unaspirated
+  let unaspirated = [
+    consonantNames.voicings[v],
+    consonantNames.places[p],
+    consonantNames.manners[m]
+  ].join(' ')
+  return a ? `${consonantNames.aspiration[v]} ${unaspirated}` : unaspirated
 }
 
 export function ipa (m, p, v, a = false) {
-  let raw = consonants.ipa.main[m][p][v].letter
-  return a ? `${raw}${consonants.ipa.modifiers.aspiration[v]}` : raw
+  let raw = consonantIpa.main[m][p][v].letter
+  return a ? `${raw}${consonantIpa.modifiers.aspiration[v]}` : raw
 }
 
 export function valid (m, p, v, a = false) {
-  let ipa = consonants.ipa.main[m][p][v]
+  let ipa = consonantIpa.main[m][p][v]
   return !!(ipa && ipa.letter && (!a || ipa.aspirated))
 }

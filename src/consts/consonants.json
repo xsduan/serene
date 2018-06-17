@@ -1,0 +1,820 @@
+{
+  "names": {
+    "places": [
+      "labial",
+      "labiodental",
+      "dental",
+      "alveolar",
+      "postalveolar",
+      "retroflex",
+      "palatal",
+      "velar",
+      "uvular",
+      "pharyngeal",
+      "epiglottal",
+      "glottal"
+    ],
+    "manners": [
+      "stop",
+      "fricative",
+      "approximant",
+      "trill",
+      "tap",
+      "nasal",
+      "lateral approximant",
+      "lateral fricative"
+    ],
+    "voicings": ["voiceless", "voiced"],
+    "aspiration": ["aspirated", "breathy"]
+  },
+  "ipa": {
+    "modifiers": {
+      "aspiration": ["\u02b0", "\u02b1"]
+    },
+    "main": [
+      [
+        [
+          {
+            "letter": "p",
+            "aspirated": true
+          },
+          {
+            "letter": "b",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "p\u032a",
+            "aspirated": true
+          },
+          {
+            "letter": "b\u032a",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "t\u032a",
+            "aspirated": true
+          },
+          {
+            "letter": "d\u032a",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "t",
+            "aspirated": true
+          },
+          {
+            "letter": "d",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "t\u0320",
+            "aspirated": true
+          },
+          {
+            "letter": "d\u0320",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0288",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0256",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "c",
+            "aspirated": true
+          },
+          {
+            "letter": "\u025f",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "k",
+            "aspirated": true
+          },
+          {
+            "letter": "g",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "q",
+            "aspirated": true
+          },
+          {
+            "letter": "g",
+            "aspirated": true
+          }
+        ],
+        [],
+        [
+          {
+            "letter": "\u02a1",
+            "aspirated": true
+          },
+          {
+            "letter": "\u02a1\u032c",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0294",
+            "aspirated": true
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "letter": "\u0278",
+            "aspirated": true
+          },
+          {
+            "letter": "\u03b2",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "f",
+            "aspirated": true
+          },
+          {
+            "letter": "v",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u03b8",
+            "aspirated": true
+          },
+          {
+            "letter": "\u00f0",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "s",
+            "aspirated": true
+          },
+          {
+            "letter": "z",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0283",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0292",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0282",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0290",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u00e7",
+            "aspirated": true
+          },
+          {
+            "letter": "\u029d",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "x",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0263",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u03c7",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0281",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0127",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0295",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u02a2\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u02a2",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "h",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0266",
+            "aspirated": true
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "letter": "\u0278\u031e",
+            "aspirated": true
+          },
+          {
+            "letter": "\u03b2\u031e",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u028b\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u028b",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u03b8\u031e",
+            "aspirated": true
+          },
+          {
+            "letter": "\u00f0\u031e",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0279\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0279",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0279\u0320\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0279\u0320",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u027b\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u027b",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "j\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "j",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0270\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0270",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u03c7\u031e",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0281\u031e",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0127\u031e",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0295\u031e",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u02a2\u031e\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u02a2\u031e",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "h\u031e",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0266\u031e",
+            "aspirated": true
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "letter": "\u0299\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0299",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0299\u032a\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0299\u032a",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "r\u032a\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "r\u032a",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "r\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "r",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "r\u0320\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "r\u0320",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u027d\u030a\u027d\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u027d\u027d",
+            "aspirated": true
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "letter": "\u0280\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0280",
+            "aspirated": true
+          }
+        ],
+        [],
+        [
+          {
+            "letter": "\u029c",
+            "aspirated": true
+          },
+          {
+            "letter": "\u02a2",
+            "aspirated": true
+          }
+        ],
+        []
+      ],
+      [
+        [
+          {
+            "letter": "\u2c71\u031f\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u2c71\u031f",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u2c71\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u2c71",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u027e\u032a\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u027e\u032a",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u027e\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u027e",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u027e\u0320\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u027e\u0320",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u027d\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u027d",
+            "aspirated": true
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "letter": "\u0262\u0325\u0306",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0262\u0306",
+            "aspirated": true
+          }
+        ],
+        [],
+        [
+          {
+            "letter": "\u02a1\u032e\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u02a1\u032e",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "",
+            "aspirated": true
+          },
+          {
+            "letter": "",
+            "aspirated": true
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "letter": "m\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "m",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0271\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0271",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "n\u032a\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "n\u032a",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "n\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "n",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "n\u0320\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "n\u0320",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0273\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0273",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0272\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0272",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u014b\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u014b",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u0274\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u0274",
+            "aspirated": true
+          }
+        ],
+        [],
+        [],
+        []
+      ],
+      [
+        [],
+        [],
+        [
+          {
+            "letter": "l\u032a\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "l\u032a",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "l\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "l",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "l\u0320\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "l\u0320",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u026d\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u026d",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u028e\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u028e",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u029f\u0325",
+            "aspirated": true
+          },
+          {
+            "letter": "\u029f",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u029f\u0320\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u029f\u0320",
+            "aspirated": true
+          }
+        ],
+        [],
+        [],
+        []
+      ],
+      [
+        [],
+        [],
+        [
+          {
+            "letter": "\u026c\u032a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u026e\u032a",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u026c",
+            "aspirated": true
+          },
+          {
+            "letter": "\u026e",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u026c\u0320",
+            "aspirated": true
+          },
+          {
+            "letter": "\u026e\u0320",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u026d\u0325\u031d",
+            "aspirated": true
+          },
+          {
+            "letter": "\u026d\u031d",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u028e\u0325\u031d",
+            "aspirated": true
+          },
+          {
+            "letter": "\u028e\u031d",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u029f\u0325\u031d",
+            "aspirated": true
+          },
+          {
+            "letter": "\u029f\u031d",
+            "aspirated": true
+          }
+        ],
+        [
+          {
+            "letter": "\u029f\u0320\u031d\u030a",
+            "aspirated": true
+          },
+          {
+            "letter": "\u029f\u0320\u031d",
+            "aspirated": true
+          }
+        ],
+        [],
+        [],
+        []
+      ]
+    ]
+  }
+}

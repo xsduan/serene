@@ -4,13 +4,12 @@ import Consonant from './consonant'
 
 import { valid } from '../utils/consonant'
 
-import { consonants } from '../consts/phonology.json'
+import { names as consonantNames } from '../consts/consonants.json'
 
 export const ConsonantChart = props => {
   // we could use a library, but this is mostly static so it's not quite worth
   // the effort.
-  let names = consonants.names
-  let { places, manners, voicings } = names
+  let { places, manners, voicings } = consonantNames
 
   let placeCount = places.length
   let mannerCount = manners.length
@@ -23,7 +22,7 @@ export const ConsonantChart = props => {
           <th />
           {[...Array(placeCount).keys()].map(p => (
             <th key={p} scope="column" colSpan={2}>
-              {names.places[p]}
+              {consonantNames.places[p]}
             </th>
           ))}
         </tr>
@@ -34,7 +33,7 @@ export const ConsonantChart = props => {
             <tr key={`${m}:${v}`}>
               {v === 0 ? (
                 <th scope="row" rowSpan={2}>
-                  {names.manners[m]}
+                  {consonantNames.manners[m]}
                 </th>
               ) : null}
               {[...Array(placeCount).keys()].map(p =>

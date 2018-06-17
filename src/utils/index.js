@@ -1,9 +1,9 @@
-import { consonants } from '../consts/phonology.json'
+import { names as consonantNames } from '../consts/consonants.json'
 
 let _consonantNameMappings = null
 
 export const consonantNameMappings = () => {
-  _consonantNameMappings = _consonantNameMappings || remap(consonants.names)
+  _consonantNameMappings = _consonantNameMappings || remap(consonantNames)
   return _consonantNameMappings
 }
 
