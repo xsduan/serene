@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import { ConsonantChart } from './components/ipa-charts'
+import { PrngConsumer } from './components/prng-context'
+import { generatePhonology } from './utils/phonology'
 
-export default class App extends Component {
-  render () {
-    return (
-      <div id="generated-ipa-chart">
-        <ConsonantChart />
-      </div>
-    )
-  }
-}
+export default () => (
+  <div id="generated-ipa-chart">
+    <PrngConsumer>
+      {prng => <ConsonantChart phonology={generatePhonology(prng)} />}
+    </PrngConsumer>
+  </div>
+)

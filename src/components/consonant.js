@@ -1,34 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-import { consonants } from '../consts/phonology.json'
+import { name, ipa } from '../utils/consonant'
 
-export default class Consonant extends Component {
-  static name (p, m, v, a = false) {
-    let names = consonants.names
-    let unaspirated = [
-      names.voicings[v],
-      names.places[p],
-      names.manners[m]
-    ].join(' ')
-    return a ? `${names.aspiration[v]} ${unaspirated}` : unaspirated
-  }
-
-  static ipa (m, p, v, a = false) {
-    let raw = consonants.ipa.main[m][p][v].letter
-    return a ? `${raw}${consonants.ipa.modifiers.aspiration[v]}` : raw
-  }
-
-  static valid (m, p, v, a = false) {
-    let ipa = consonants.ipa.main[m][p][v]
-    return !!(ipa && ipa.letter && (!a || ipa.aspirated))
-  }
-
-  render () {
-    let { place: p, manner: m, voicing: v, aspirated: a } = this.props
-    return (
-      <span title={Consonant.name(m, p, v, a)}>
-        {Consonant.ipa(m, p, v, a)}
-      </span>
-    )
-  }
-}
+export default ({ manner: m, place: p, voicing: v, aspirated: a }) => (
+  <span title={name(m, p, v, a)}>{ipa(m, p, v, a)}</span>
+)
