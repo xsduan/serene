@@ -2,7 +2,7 @@ import { names as consonantNames } from '../consts/consonants.json'
 
 let _consonantNameMappings = null
 
-export const consonantNameMappings = () => {
+export function consonantNameMappings () {
   _consonantNameMappings = _consonantNameMappings || remap(consonantNames)
   return _consonantNameMappings
 }

@@ -90,8 +90,8 @@ export function generatePhonology (prng) {
 
   let consonants = {}
   while (Object.keys(consonants).length < number) {
-    // certainly this could be problematic but since we know they're only
-    // going to be numbers this method works fine for our purposes
+    // certainly this could be problematic but since we know the types
+    // beforehand this method works fine for our purposes
     let consonant = generateConsonant(prng)
 
     if (valid(...consonant)) {

@@ -1,11 +1,8 @@
 import Mersenne from 'mersenne-twister'
 
 export default class Prng extends Mersenne {
-  constructor (seed = null) {
-    seed = seed || Date.now()
+  constructor (seed) {
     super(seed)
-
-    // save seed for future reference
     this.seed = seed
   }
 
